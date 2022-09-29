@@ -1,3 +1,4 @@
+#using imports
 import pandas as pd
 from patterns import create_patterns
 from spacy.matcher import Matcher
@@ -7,11 +8,12 @@ from spacy.training import Example
 import datetime as dt
 from spacy.util import minibatch, compounding
 
+#using create_patterns() from patterns.py file
 nlp = spacy.load("en_core_web_sm")
 matcher = Matcher(nlp.vocab, validate=True)
 matcher.add("climate", create_patterns())
 
-
+#creating a method to parse the training data
 def parse_train_data(text1):
     doc1 = nlp(text1)
     detections = [(doc1[start:end].start_char, doc1[start:end].end_char, 'climate') for idx, start, end in
@@ -22,9 +24,10 @@ def parse_train_data(text1):
 df = (pd.read_csv("Wiki-Doc-Train.txt", sep='\t', usecols=['label', 'sentence']))
 titles = df.loc[lambda d: d['label'] == 1]['sentence']
 
+#creating training data
 TRAIN_DATA = [parse_train_data(d) for d in nlp.pipe(titles) if len(matcher(d)) == 1]
 
-
+#method for training the blank NLP
 def create_blank_nlp(train_data):
     nlp1 = spacy.blank("en")
     nlp1.add_pipe("ner")
@@ -34,8 +37,9 @@ def create_blank_nlp(train_data):
             ner.add_label(ent[2])
     return nlp1
 
-
 nlp2 = create_blank_nlp(TRAIN_DATA)
+
+#training has begun
 optimizer = nlp2.begin_training()
 for i in range(20):
     losses = {}
