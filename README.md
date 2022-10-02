@@ -9,7 +9,7 @@ A website where all the climate change related articles are placed and rendered 
 - User can search for his preferred climate label related articles
 - User can view the relationship details by clicking on the arrow
 - He/She can navigate to the article using the URL displayed in the details window
-- User can filter articles using calendar acooring to years
+- User can filter articles using calendar according to years
 
 ## How to start/access this website?
 Firstly the Neo4j has to be prepared as follows:
