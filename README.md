@@ -31,7 +31,7 @@ MATCH (c:Climate {name: row.name})
 SET c.community = toInteger(row.community) 
 
 ```
-Our graph consists of Climate nodes that are connected by an has relationship. We can visualize the whole graph in Neo4j Browser by running the following cypher:
+Our graph consists of Climate nodes that are connected by a 'has' relationship. We can visualize the whole graph in Neo4j Browser by running the following cypher:
 ```
 MATCH p = (:Climate)-[:has]->(:Climate)
 RETURN p
