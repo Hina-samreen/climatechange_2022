@@ -11,7 +11,7 @@ A website where all the climate change related articles are placed and rendered 
 - He/She can navigate to the article using the URL displayed in the details window
 - User can filter articles using calendar acooring to years
 
-## How to use start/access this website?
+## How to start/access this website?
 Firstly the Neo4j has to be prepared as follows:
 - Start with a blank Neo4j instance(you can either use [Neo4j browser](https://neo4j.com/docs/operations-manual/current/installation/neo4j-browser/#:~:text=Neo4j%20Browser%20is%20a%20tool,Neo4j%20Server%20and%20Neo4j%20Desktop.) or spin up a blank [Neo4j Sandbox](https://neo4j.com/sandbox/)and then load the Climate change dataset and run the cypher queries as below:
 
