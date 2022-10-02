@@ -54,3 +54,7 @@ var config = {
 					serverPassword: "neo4j-some_password_that_you_set"
 				},
  ```
+ Once you change the credentials and run the index.html file, you will be able to access the climate change reporter
+ 
+## Software documentation
+To know more about the softwares used and the process of our workflow, please visit the Wiki page of our project.
