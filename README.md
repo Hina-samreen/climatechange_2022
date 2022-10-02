@@ -16,7 +16,7 @@ Firstly the Neo4j has to be prepared as follows:
 - Start with a blank Neo4j instance(you can either use [Neo4j browser](https://neo4j.com/docs/operations-manual/current/installation/neo4j-browser/#:~:text=Neo4j%20Browser%20is%20a%20tool,Neo4j%20Server%20and%20Neo4j%20Desktop.) or spin up a blank [Neo4j Sandbox](https://neo4j.com/sandbox/)and then load the Climate change dataset and run the cypher queries as below:
 
 ```
-LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Hina-samreen/climatechange_2022/main/relations_message_version3_withyear.csv'AS row  
+LOAD CSV WITH HEADERS FROM 'https://raw.githubusercontent.com/Hina-samreen/climatechange_2022/Data_set/relations_message_version3_withyear.csv'AS row  
 MERGE (src:Climate {name: row.subjects})  
 MERGE (tgt:Climate {name: row.objects})  
 MERGE (src)-[r:has{relation:row.relationships,date:row.dates,year:row.Year,title:row.titles}]->(tgt) 
@@ -26,7 +26,7 @@ MERGE (src)-[r:has{relation:row.relationships,date:row.dates,year:row.Year,title
 We have precalculated community detection algorithm to assign community ids for each Character. So we can load that next using the below cypher query:
 
 ```
-LOAD CSV WITH HEADERS FROM 'https://github.com/Hina-samreen/climatechange_2022/blob/main/names_message_version3.csv' AS row  
+LOAD CSV WITH HEADERS FROM 'https://github.com/Hina-samreen/climatechange_2022/Data_set/names_message_version3.csv' AS row  
 MATCH (c:Climate {name: row.name})  
 SET c.community = toInteger(row.community) 
 
