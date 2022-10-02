@@ -43,7 +43,7 @@ We can see from the above image, that all the Climate nodes are connected to eac
 ## index.html
 After having prepared the Neo4j database as explained in the above sections, it is time to run the index.html file. Only one change needs to be done and it is changing of Neo4j credentials as you can see in the below code snippet:
 
-````
+```
 var config = {
 
 
@@ -53,8 +53,9 @@ var config = {
 					serverUser: "neo4j",
 					serverPassword: "neo4j-some_password_that_you_set"
 				},
+				
  ```
  Once you change the credentials and run the index.html file, you will be able to access the climate change reporter
- 
+
 ## Software documentation
 To know more about the softwares used and the process of our workflow, please visit the Wiki page of our project.
