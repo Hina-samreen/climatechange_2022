@@ -38,3 +38,19 @@ RETURN p
 ```
 ![Screenshot 2022-10-02 at 19 49 01](https://user-images.githubusercontent.com/66202956/193468473-cfdfb56e-f6c1-4a3b-b5d8-da95a207e391.png)
 
+We can see from the above image, that all the Climate nodes are connected to each other via a relationship and this visualization can be brought to the front end using Neovis.js, which combines the Javascript driver for Neo4j and the vis.js visualization library. For this we need index.html file
+
+## index.html
+After having prepared the Neo4j database as explained in the above sections, it is time to run the index.html file. Only one change needs to be done and it is changing of Neo4j credentials as you can see in the below code snippet:
+
+````
+var config = {
+
+
+				containerId: "viz",
+				neo4j: {
+					serverUrl: "bolt://localhost:7687",
+					serverUser: "neo4j",
+					serverPassword: "neo4j-some_password_that_you_set"
+				},
+ ```
