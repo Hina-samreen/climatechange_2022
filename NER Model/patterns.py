@@ -1,4 +1,6 @@
 
+# creating a pattern to generate training data
+
 def create_patterns():
 
     pattern_climate = [
