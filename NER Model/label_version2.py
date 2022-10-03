@@ -20,8 +20,8 @@ def parse_train_data(text1):
                   matcher(doc1)]
     return doc1.text, {'entities': detections}
 
-
-df = (pd.read_csv("Wiki-Doc-Train.txt", sep='\t', usecols=['label', 'sentence']))
+#parsing the text from label_it_tab_seperated_new.txt file
+df = (pd.read_csv("label_it_tab_seperated_new.txt", sep='\t', usecols=['label', 'title']))
 titles = df.loc[lambda d: d['label'] == 1]['sentence']
 
 #creating training data
