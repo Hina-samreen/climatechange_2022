@@ -57,6 +57,7 @@ for i in range(20):
 
 print(nlp2.pipeline)
 
+#Reading the data extracted from websites
 df1 = pd.read_csv("climate_articles_new_withYear.csv", usecols=['date', 'title', 'URL', 'Year'])
 
 values = df1.values.tolist()
@@ -67,6 +68,7 @@ values = df1.values.tolist()
 # nlp = spacy.load("en_core_web_sm")
 entities = []
 
+#generating labels from the csv file that was just read
 for title in values:
     doc2 = nlp2(title[1])
     if not len(doc2.ents) == 0:
@@ -74,6 +76,7 @@ for title in values:
 for entity in entities:
     print(entity[0])
 
+#using the entities generated creating the relationship file first
 records = []
 new_records = []
 for value in entities:
@@ -91,6 +94,7 @@ for value in entities:
 df2 = pd.DataFrame(new_records, columns=['subjects', 'objects', 'relationships', 'dates', "titles", "Year"])
 df2.to_csv("relationships_version4_sept29.csv")
 
+# now reading the relationship file and creating the names file required for assigning community
 df3 = pd.read_csv("relationships_version4_sept29.csv", usecols=["subjects", "objects"])
 
 raw_values_subject = [_.lower() for _ in df3['subjects']]
