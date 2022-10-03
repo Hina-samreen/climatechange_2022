@@ -59,4 +59,4 @@ var config = {
  Once you change the credentials and run the index.html file, you will be able to access the climate change reporter
 
 ## Software documentation
-To know more about the softwares used and the process of our workflow, please visit the [Wiki page](https://github.com/Hina-samreen/climatechange_2022/wiki) of our project.
+To know more about the softwares used and the process of our workflow and a detailed report of our project, please visit the [Wiki page](https://github.com/Hina-samreen/climatechange_2022/wiki) of our project.
